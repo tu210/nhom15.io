@@ -99,8 +99,14 @@ class SubscriptionController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Có lỗi xảy ra khi xóa đăng ký: ' . $e->getMessage()
+                'message' => 'Có lỗi xảy ra khii xóa đăng ký: ' . $e->getMessage()
             ]);
         }
     }
 }
+
+
+
+
+
+
