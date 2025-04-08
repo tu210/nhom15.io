@@ -32,9 +32,7 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
-
-    - name: Copy .env
-      run: cp .env.example .env
+    
 
     - name: Generate app key
       run: php artisan key:generate
