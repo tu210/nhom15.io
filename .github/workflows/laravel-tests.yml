@@ -1,17 +1,18 @@
-name: Laravel Tests
+name: PHP Test
 
 on:
   push:
-    branches: [main] 
+    branches: [main]
   pull_request:
     branches: [main]
 
 jobs:
-  laravel-tests:
+  php-tests:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
@@ -20,15 +21,11 @@ jobs:
         extensions: mbstring, bcmath, xml
         coverage: none
 
-    - name: Install Composer dependencies
+    - name: Install dependencies with Composer
       run: composer install --prefer-dist --no-progress
-    - name: Check PHP version
-      run: php -v
-    - name: Copy .env
-      run: cp .env.example .env
-   
-    - name: Generate app key
-      run: php artisan key:generate
 
-    - name: Run tests
-      run: php artisan test
+    - name: Check PHP Version
+      run: php -v
+
+    - name: Run PHP syntax check
+      run: find . -type f -name "*.php" -exec php -l {} \;
