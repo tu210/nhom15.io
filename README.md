@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# nhom15.io
+=======
 
 
 Cấu hình database:
@@ -84,3 +87,4 @@ MAIL_FROM_NAME="${APP_NAME}"
 terminal 1: npm run dev
 terminal 2: php artisan serve
 
+>>>>>>> main
